@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="forms-container">
+        <div class="signin-signup">
+            <form (ngSubmit)="login()" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="email" name="email" class="ff" [(ngModel)]="email" placeholder="Email" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" class="ff" [(ngModel)]="password" placeholder=" Password"
+                        required>
+                </div>
+                <div class="but">
+
+
+                    <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                    <div class="register"><a href="#" routerLink="/register">New User Register</a></div>
+                </div>
+            </form>
+            <div class="frm">
+                <p *ngIf="errorMessage.length > 0" class="text-danger">
+                    {{errorMessage}}</p>
+
+                <p *ngIf="error.message.length > 0" class="text-danger">
+                    {{error.message}} </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
